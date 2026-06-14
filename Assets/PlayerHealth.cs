@@ -2,10 +2,11 @@ using System;
 using System.Collections;
 using Unity.Hierarchy;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float MaxHealth = 100;
+    public float MaxHealth = 3;
     private float health;
     private bool canRecieveDamage = true;
     public float invincibilityTimer = 2;
@@ -14,16 +15,24 @@ public class PlayerHealth : MonoBehaviour
     public event HealthChangedHandler OnHealthChanged;
 
     public delegate void HealthInitHandler(float newHealth);
-    public event HealthInitHandler OnHealthInitialised;
+    public event HealthInitHandler OnHealthInit;
 
     void Start()
     {
-        Health = MaxHealth;
-        OnHealthInitialised?.Invoke(Health);
+        health = MaxHealth;
+        OnHealthInit?.Invoke(health);
     }
     void Update()
     {
-        
+
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Kolec"))
+        {
+            AddDamage(1f);
+        }
     }
 
     public void AddDamage(float damage)
@@ -34,9 +43,15 @@ public class PlayerHealth : MonoBehaviour
             OnHealthChanged?.Invoke(health, -damage);
             canRecieveDamage = false;
             StartCoroutine(InvincibilityTimer(invincibilityTimer, ResetInvincibility));
+            Debug.Log("AUA! Zosta≈Ço mi: " + health + " zdrowia");
+
+            if (health <= 0)
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+            }
         }
-        Debug.Log(health);
     }
+
     IEnumerator InvincibilityTimer(float time, Action callback)
     {
         yield return new WaitForSeconds(time);
@@ -63,7 +78,7 @@ public class PlayerHealth : MonoBehaviour
         public void InitializeHealth(float startAmount)
             { currentHealth = startAmount; 
         OnHealthInitialized?.Invoke(currentHealth);
-            Console.WriteLine("Øycie zosta≥o zainicjowane");
+            Console.WriteLine("√òycie zosta‚â•o zainicjowane");
         }
 
     }
