@@ -10,15 +10,58 @@ public class PlayerMotor : MonoBehaviour
     private Rigidbody2D rigidbody2D;
     public float speed = 10;
     public float jumpForce = 10;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
+
     private void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
-    // Update is called once per frame
+
     private void Update()
     {
+        // Ruch w lewo/prawo
         transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime * speed;
+
+        // Animacje biegania i obracanie
+        if (direction.x != 0) 
+        {
+            animator.SetBool("Biegnie", true);
+
+            if (direction.x < 0) 
+            {
+                spriteRenderer.flipX = true;
+            }
+            else if (direction.x > 0)
+            {
+                spriteRenderer.flipX = false;
+            }
+        }
+        else 
+        {
+            animator.SetBool("Biegnie", false);
+        }
+
+        // --- NOWE: Animacje skoku i spadania! ---
+        // Sprawdzamy prędkość pionową (Y) na komponencie Rigidbody2D
+        if (rigidbody2D.linearVelocity.y > 0.1f) // Jeśli leci w górę
+        {
+            animator.SetBool("Skacze", true);
+            animator.SetBool("Spada", false);
+        }
+        else if (rigidbody2D.linearVelocity.y < -0.1f) // Jeśli spada w dół
+        {
+            animator.SetBool("Skacze", false);
+            animator.SetBool("Spada", true);
+        }
+        else // Jeśli stoi bezpiecznie na ziemi (prędkość w pionie bliska zera)
+        {
+            animator.SetBool("Skacze", false);
+            animator.SetBool("Spada", false);
+        }
     }
 
     private void OnMove(InputValue value)
@@ -33,7 +76,6 @@ public class PlayerMotor : MonoBehaviour
             rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             jumpCount++;
         }
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
