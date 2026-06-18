@@ -29,7 +29,7 @@ public class PlayerMotor : MonoBehaviour
         // Animacje biegania i obracanie
         if (direction.x != 0) 
         {
-            animator.SetBool("Biegnie", true);
+            animator.SetBool("biegnie", true);
 
             if (direction.x < 0) 
             {
@@ -42,7 +42,7 @@ public class PlayerMotor : MonoBehaviour
         }
         else 
         {
-            animator.SetBool("Biegnie", false);
+            animator.SetBool("biegnie", false);
         }
 
         // --- NOWE: Animacje skoku i spadania! ---

@@ -79,7 +79,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 35
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -124,6 +124,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -136,15 +149,15 @@ TextureImporter:
         width: 38
         height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 978efec6a4e426c469eaa6df7c4c2d9b
-      internalID: -3049067163339015078
+      spriteID: 456034dd1e88749faa98dc337f242046
+      internalID: 1020074168
       vertices: []
       indices: 
       edges: []
@@ -153,20 +166,20 @@ TextureImporter:
       name: On (38x38)_1
       rect:
         serializedVersion: 2
-        x: 38
+        x: 266
         y: 0
         width: 38
         height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcff34e9b32d98049b202e09a66b5545
-      internalID: 5023087293052794153
+      spriteID: b5aa243dac90d43adb46a0c70d578b32
+      internalID: 77163564
       vertices: []
       indices: 
       edges: []
@@ -175,7 +188,7 @@ TextureImporter:
       name: On (38x38)_2
       rect:
         serializedVersion: 2
-        x: 76
+        x: 228
         y: 0
         width: 38
         height: 38
@@ -187,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 217c9e5c54e8eef42ac87b7dea22a4c9
-      internalID: 3635640145415724294
+      spriteID: 72561b1615e9d4ecbb719cef8e6b11c3
+      internalID: 1460803245
       vertices: []
       indices: 
       edges: []
@@ -197,7 +210,7 @@ TextureImporter:
       name: On (38x38)_3
       rect:
         serializedVersion: 2
-        x: 114
+        x: 190
         y: 0
         width: 38
         height: 38
@@ -209,8 +222,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bbcc804402d28049aa89c821f4aef7c
-      internalID: -3382226459320202674
+      spriteID: c2ea0dcdf215d497a9461fcbd215d847
+      internalID: 1678935716
       vertices: []
       indices: 
       edges: []
@@ -231,8 +244,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ebb23c116d33194b8a05e3f751ff09d
-      internalID: 6766133057857300771
+      spriteID: bf5aa26bc35be4e6b87c281e5c4c7891
+      internalID: 1840698617
       vertices: []
       indices: 
       edges: []
@@ -241,7 +254,7 @@ TextureImporter:
       name: On (38x38)_5
       rect:
         serializedVersion: 2
-        x: 190
+        x: 114
         y: 0
         width: 38
         height: 38
@@ -253,8 +266,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f89a90399d25e54ba12f6494139187c
-      internalID: -6071002419338243549
+      spriteID: ed4a85aa01ec743709f47d8373021bd6
+      internalID: -189821119
       vertices: []
       indices: 
       edges: []
@@ -263,7 +276,7 @@ TextureImporter:
       name: On (38x38)_6
       rect:
         serializedVersion: 2
-        x: 228
+        x: 76
         y: 0
         width: 38
         height: 38
@@ -275,8 +288,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8eeb0ccad161fcf498bc5d7cd895b861
-      internalID: -7001973787898513139
+      spriteID: d64dd85edb036447381703490bf735da
+      internalID: 270946379
       vertices: []
       indices: 
       edges: []
@@ -285,7 +298,7 @@ TextureImporter:
       name: On (38x38)_7
       rect:
         serializedVersion: 2
-        x: 266
+        x: 38
         y: 0
         width: 38
         height: 38
@@ -297,8 +310,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7538bc1370adcc4e812dee9429607e3
-      internalID: -7336932856281768672
+      spriteID: 4566edcb33b6e4dd7882a53659c7ffa5
+      internalID: -1686210295
       vertices: []
       indices: 
       edges: []
@@ -315,16 +328,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":304.0,"y":38.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      On (38x38)_0: -3049067163339015078
-      On (38x38)_1: 5023087293052794153
-      On (38x38)_2: 3635640145415724294
-      On (38x38)_3: -3382226459320202674
-      On (38x38)_4: 6766133057857300771
-      On (38x38)_5: -6071002419338243549
-      On (38x38)_6: -7001973787898513139
-      On (38x38)_7: -7336932856281768672
+      On (38x38)_0: 1020074168
+      On (38x38)_1: 77163564
+      On (38x38)_2: 1460803245
+      On (38x38)_3: 1678935716
+      On (38x38)_4: 1840698617
+      On (38x38)_5: -189821119
+      On (38x38)_6: 270946379
+      On (38x38)_7: -1686210295
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
